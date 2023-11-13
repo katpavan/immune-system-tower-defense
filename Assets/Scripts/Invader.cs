@@ -9,26 +9,25 @@ public class Invader : MonoBehaviour
     public Transform[] targetTransforms;
 
     //movement targets for invader
-    private Rigidbody2D targetOne;
-    public Rigidbody2D[] targetOnes;
-    private Rigidbody2D targetTwo;
-    public Rigidbody2D[] targetTwos;
-    private Rigidbody2D targetThree;
-    public Rigidbody2D[] targetThrees;
-    private Rigidbody2D targetFour;
-    public Rigidbody2D[] targetFours;
-    private Rigidbody2D targetFive;
-    public Rigidbody2D[] targetFives;
-    private Rigidbody2D targetSix;
-    public Rigidbody2D[] targetSixes;
-    private Rigidbody2D targetSeven;
-    public Rigidbody2D[] targetSevens;
-    private Rigidbody2D targetFinal;
-    public Rigidbody2D[] targetFinals;
-    public List<Rigidbody2D> targets = new List<Rigidbody2D>(); //use a list if you want to manipulate the inside
+    private Transform targetOne;
+    public Transform[] targetOnes;
+    private Transform targetTwo;
+    public Transform[] targetTwos;
+    private Transform targetThree;
+    public Transform[] targetThrees;
+    private Transform targetFour;
+    public Transform[] targetFours;
+    private Transform targetFive;
+    public Transform[] targetFives;
+    private Transform targetSix;
+    public Transform[] targetSixes;
+    private Transform targetSeven;
+    public Transform[] targetSevens;
+    private Transform targetFinal;
+    public Transform[] targetFinals;
+    public List<Transform> targets = new List<Transform>(); //use a list if you want to manipulate the inside
     int NextPosIndex;
     Transform NextPos;
-    // Rigidbody2D NextPos;
     public float speed = 1f;
     public Sprite[] sprites;
     public string[] invaderTypes = new string[] {"virus", "bacteria", "fungi"};
@@ -83,7 +82,7 @@ public class Invader : MonoBehaviour
             if (NextPosIndex >= targetTransforms.Length)
             {
                 // NextPosIndex = 0; //if you want to loop
-                
+
                 //really slow function
                 //really bad to use this inside an update
                 //it looks through every game object in the game
