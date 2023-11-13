@@ -38,31 +38,33 @@ public class Invader : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigidbody = GetComponent<Rigidbody2D>();
+
+        //randomize targets
+        targetOne = targetOnes[Random.Range(0, targetOnes.Length)];
+        targetTwo = targetTwos[Random.Range(0, targetTwos.Length)];
+        targetThree = targetThrees[Random.Range(0, targetThrees.Length)];
+        targetFour = targetFours[Random.Range(0, targetFours.Length)];
+        targetFive = targetFives[Random.Range(0, targetFives.Length)];
+        targetSix = targetSixes[Random.Range(0, targetSixes.Length)];
+        targetSeven = targetSevens[Random.Range(0, targetSevens.Length)];
+        targetFinal = targetFinals[Random.Range(0, targetFinals.Length)];
+
+        //add randomized targets to the targets list
+        targets.Add(targetOne);
+        targets.Add(targetTwo);
+        targets.Add(targetThree);
+        targets.Add(targetFour);
+        targets.Add(targetFive);
+        targets.Add(targetSix);
+        targets.Add(targetSeven);
+        targets.Add(targetFinal);
+
+        NextPos = targetOne;
     }
     // Start is called before the first frame update
     void Start()
     {
-        //randomize target one
-            // targetOne = targetOnes[Random.Range(0, targetOnes.Length)];
-            // targetTwo = targetTwos[Random.Range(0, targetTwos.Length)];
-            // targetThree = targetThrees[Random.Range(0, targetThrees.Length)];
-            // targetFour = targetFours[Random.Range(0, targetFours.Length)];
-            // targetFive = targetFives[Random.Range(0, targetFives.Length)];
-            // targetSix = targetSixes[Random.Range(0, targetSixes.Length)];
-            // targetSeven = targetSevens[Random.Range(0, targetSevens.Length)];
-            // targetFinal = targetFinals[Random.Range(0, targetFinals.Length)];
-            // targets.Add(targetOne);
-            // targets.Add(targetTwo);
-            // targets.Add(targetThree);
-            // targets.Add(targetFour);
-            // targets.Add(targetFive);
-            // targets.Add(targetSix);
-            // targets.Add(targetSeven);
-            // targets.Add(targetFinal);
-
-        // NextPos = targetOne;
-
-        NextPos = targetTransforms[0];
+        // NextPos = targetTransforms[0];
 
         //randomize invader
         //invaderTypes and sprites are in the same order
@@ -79,7 +81,8 @@ public class Invader : MonoBehaviour
         if (this.transform.position == NextPos.position){
             NextPosIndex++;
 
-            if (NextPosIndex >= targetTransforms.Length)
+            // if (NextPosIndex >= targetTransforms.Length)
+            if (NextPosIndex >= targets.Count) //use Count for a list, use Length for an array
             {
                 // NextPosIndex = 0; //if you want to loop
 
@@ -90,8 +93,8 @@ public class Invader : MonoBehaviour
 
                 Destroy(this.gameObject);
             }
-
-            NextPos = targetTransforms[NextPosIndex];
+            NextPos = targets[NextPosIndex];
+            // NextPos = targetTransforms[NextPosIndex];
         }else{
             transform.position = Vector3.MoveTowards(this.transform.position, NextPos.position, this.speed * Time.deltaTime);
         }
