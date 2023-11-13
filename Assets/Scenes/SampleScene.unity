@@ -1623,6 +1623,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targets.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
       propertyPath: targetOnes.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -1630,6 +1634,38 @@ PrefabInstance:
       propertyPath: targetTwos.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targets.Array.data[0]
+      value: 
+      objectReference: {fileID: 1486637378}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targets.Array.data[1]
+      value: 
+      objectReference: {fileID: 1258945243}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targets.Array.data[2]
+      value: 
+      objectReference: {fileID: 775192861}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targets.Array.data[3]
+      value: 
+      objectReference: {fileID: 1400163407}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targets.Array.data[4]
+      value: 
+      objectReference: {fileID: 1482056100}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targets.Array.data[5]
+      value: 
+      objectReference: {fileID: 615686203}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targets.Array.data[6]
+      value: 
+      objectReference: {fileID: 1426320535}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targets.Array.data[7]
+      value: 
+      objectReference: {fileID: 154957487}
     - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
       propertyPath: targetFives.Array.size
       value: 8
@@ -1798,6 +1834,42 @@ PrefabInstance:
       propertyPath: targetThrees.Array.data[4]
       value: 
       objectReference: {fileID: 1867532315}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targetTransforms.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targetTransforms.Array.data[0]
+      value: 
+      objectReference: {fileID: 1486637373}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targetTransforms.Array.data[1]
+      value: 
+      objectReference: {fileID: 912612782}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targetTransforms.Array.data[2]
+      value: 
+      objectReference: {fileID: 349603747}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targetTransforms.Array.data[3]
+      value: 
+      objectReference: {fileID: 1400163401}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targetTransforms.Array.data[4]
+      value: 
+      objectReference: {fileID: 301257150}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targetTransforms.Array.data[5]
+      value: 
+      objectReference: {fileID: 615686197}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targetTransforms.Array.data[6]
+      value: 
+      objectReference: {fileID: 1426320529}
+    - target: {fileID: -8751789134456354000, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
+      propertyPath: targetTransforms.Array.data[7]
+      value: 
+      objectReference: {fileID: 154957481}
     - target: {fileID: 2974198510182624100, guid: f4044b795ed3a6e4f938f315c78d477b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3608,6 +3680,52 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: -6197257138913461132, guid: f41cefb474b35034690342e4c0f0527f, type: 3}
   m_PrefabInstance: {fileID: 848799546}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1917577993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1917577995}
+  - component: {fileID: 1917577994}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1917577994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917577993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eb91019f149824419e6eb8f9c152482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  lives: 3
+--- !u!4 &1917577995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917577993}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3933711, y: 0.29328164, z: -0.20903304}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1975839166 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: -6197257138913461132, guid: f41cefb474b35034690342e4c0f0527f, type: 3}

@@ -6,6 +6,8 @@ using UnityEngine;
 // do it this way with positions 
 public class Invader : MonoBehaviour
 {
+    public Transform[] targetTransforms;
+
     //movement targets for invader
     private Rigidbody2D targetOne;
     public Rigidbody2D[] targetOnes;
@@ -25,7 +27,8 @@ public class Invader : MonoBehaviour
     public Rigidbody2D[] targetFinals;
     public List<Rigidbody2D> targets = new List<Rigidbody2D>(); //use a list if you want to manipulate the inside
     int NextPosIndex;
-    Rigidbody2D NextPos;
+    Transform NextPos;
+    // Rigidbody2D NextPos;
     public float speed = 1f;
     public Sprite[] sprites;
     public string[] invaderTypes = new string[] {"virus", "bacteria", "fungi"};
@@ -41,24 +44,26 @@ public class Invader : MonoBehaviour
     void Start()
     {
         //randomize target one
-        targetOne = targetOnes[Random.Range(0, targetOnes.Length)];
-        targetTwo = targetTwos[Random.Range(0, targetTwos.Length)];
-        targetThree = targetThrees[Random.Range(0, targetThrees.Length)];
-        targetFour = targetFours[Random.Range(0, targetFours.Length)];
-        targetFive = targetFives[Random.Range(0, targetFives.Length)];
-        targetSix = targetSixes[Random.Range(0, targetSixes.Length)];
-        targetSeven = targetSevens[Random.Range(0, targetSevens.Length)];
-        targetFinal = targetFinals[Random.Range(0, targetFinals.Length)];
-        targets.Add(targetOne);
-        targets.Add(targetTwo);
-        targets.Add(targetThree);
-        targets.Add(targetFour);
-        targets.Add(targetFive);
-        targets.Add(targetSix);
-        targets.Add(targetSeven);
-        targets.Add(targetFinal);
+            // targetOne = targetOnes[Random.Range(0, targetOnes.Length)];
+            // targetTwo = targetTwos[Random.Range(0, targetTwos.Length)];
+            // targetThree = targetThrees[Random.Range(0, targetThrees.Length)];
+            // targetFour = targetFours[Random.Range(0, targetFours.Length)];
+            // targetFive = targetFives[Random.Range(0, targetFives.Length)];
+            // targetSix = targetSixes[Random.Range(0, targetSixes.Length)];
+            // targetSeven = targetSevens[Random.Range(0, targetSevens.Length)];
+            // targetFinal = targetFinals[Random.Range(0, targetFinals.Length)];
+            // targets.Add(targetOne);
+            // targets.Add(targetTwo);
+            // targets.Add(targetThree);
+            // targets.Add(targetFour);
+            // targets.Add(targetFive);
+            // targets.Add(targetSix);
+            // targets.Add(targetSeven);
+            // targets.Add(targetFinal);
 
-        NextPos = targetOne;
+        // NextPos = targetOne;
+
+        NextPos = targetTransforms[0];
 
         //randomize invader
         //invaderTypes and sprites are in the same order
@@ -72,19 +77,39 @@ public class Invader : MonoBehaviour
 
     public void MoveGameObject()
     {
-        if (_rigidbody.position == NextPos.position)
-        {
+        if (this.transform.position == NextPos.position){
             NextPosIndex++;
-            NextPos = targets[NextPosIndex];
-            if (NextPosIndex == targets.Count){
+
+            if (NextPosIndex >= targetTransforms.Length)
+            {
+                // NextPosIndex = 0; //if you want to loop
+                
+                //really slow function
+                //really bad to use this inside an update
+                //it looks through every game object in the game
+                FindObjectOfType<GameManager>().InvaderReachedThroat();
+
                 Destroy(this.gameObject);
-            }else{
-                NextPos = targets[NextPosIndex];
             }
-        }else
-        {
-            _rigidbody.position = Vector3.MoveTowards(_rigidbody.position, NextPos.position, speed * Time.deltaTime);
+
+            NextPos = targetTransforms[NextPosIndex];
+        }else{
+            transform.position = Vector3.MoveTowards(this.transform.position, NextPos.position, this.speed * Time.deltaTime);
         }
+        
+        // if (_rigidbody.position == NextPos.position)
+        // {
+        //     NextPosIndex++;
+        //     NextPos = targets[NextPosIndex];
+        //     if (NextPosIndex == targets.Count){
+        //         Destroy(this.gameObject);
+        //     }else{
+        //         NextPos = targets[NextPosIndex];
+        //     }
+        // }else
+        // {
+        //     _rigidbody.position = Vector3.MoveTowards(_rigidbody.position, NextPos.position, speed * Time.deltaTime);
+        // }
     }
 
     public void FixedUpdate()
