@@ -12,14 +12,14 @@ GameObject:
   - component: {fileID: 6052807923908124273}
   - component: {fileID: -6197257138913461132}
   - component: {fileID: 5913383227912241583}
-  - component: {fileID: 380271905478422901}
+  - component: {fileID: 800356483716644476}
   m_Layer: 0
   m_Name: TargetOne (1)
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6052807923908124275
 Transform:
   m_ObjectHideFlags: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71dc6e571bfc4d4089d9d9cf277a7bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!212 &380271905478422901
+--- !u!212 &800356483716644476
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

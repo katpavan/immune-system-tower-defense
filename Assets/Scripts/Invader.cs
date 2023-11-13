@@ -76,11 +76,11 @@ public class Invader : MonoBehaviour
         {
             NextPosIndex++;
             NextPos = targets[NextPosIndex];
-            // if (NextPosIndex == targets.Count){
-            //     Destroy(this.gameObject);
-            // }else{
-            //     NextPos = targets[NextPosIndex];
-            // }
+            if (NextPosIndex == targets.Count){
+                Destroy(this.gameObject);
+            }else{
+                NextPos = targets[NextPosIndex];
+            }
         }else
         {
             _rigidbody.position = Vector3.MoveTowards(_rigidbody.position, NextPos.position, speed * Time.deltaTime);
