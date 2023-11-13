@@ -6,8 +6,6 @@ using UnityEngine;
 // do it this way with positions 
 public class Invader : MonoBehaviour
 {
-    public Transform[] targetTransforms;
-
     //movement targets for invader
     private Transform targetOne;
     public Transform[] targetOnes;
@@ -64,8 +62,6 @@ public class Invader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // NextPos = targetTransforms[0];
-
         //randomize invader
         //invaderTypes and sprites are in the same order
         int invaderindex = Random.Range(0, invaderTypes.Length);
@@ -81,8 +77,7 @@ public class Invader : MonoBehaviour
         if (this.transform.position == NextPos.position){
             NextPosIndex++;
 
-            // if (NextPosIndex >= targetTransforms.Length)
-            if (NextPosIndex >= targets.Count) //use Count for a list, use Length for an array
+            if (NextPosIndex == targets.Count) //use Count for a list, use Length for an array
             {
                 // NextPosIndex = 0; //if you want to loop
 
@@ -92,26 +87,12 @@ public class Invader : MonoBehaviour
                 FindObjectOfType<GameManager>().InvaderReachedThroat();
 
                 Destroy(this.gameObject);
+            }else{
+                NextPos = targets[NextPosIndex];
             }
-            NextPos = targets[NextPosIndex];
-            // NextPos = targetTransforms[NextPosIndex];
         }else{
             transform.position = Vector3.MoveTowards(this.transform.position, NextPos.position, this.speed * Time.deltaTime);
         }
-        
-        // if (_rigidbody.position == NextPos.position)
-        // {
-        //     NextPosIndex++;
-        //     NextPos = targets[NextPosIndex];
-        //     if (NextPosIndex == targets.Count){
-        //         Destroy(this.gameObject);
-        //     }else{
-        //         NextPos = targets[NextPosIndex];
-        //     }
-        // }else
-        // {
-        //     _rigidbody.position = Vector3.MoveTowards(_rigidbody.position, NextPos.position, speed * Time.deltaTime);
-        // }
     }
 
     public void FixedUpdate()
