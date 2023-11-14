@@ -1,3 +1,16 @@
+11-13-23
+--
+
+todo:
+* show game over when game is done and a play again button
+* click white blood cell from hud, change cursor to it and then change cursor back when you click again and have it stay where you placed it
+* check if animations work from lori and what adjustments are needed
+
+done:
+* Got the spawner to randomly spawn an invader
+* Changed the spawn rate to 2.5 according to gdd
+* change the speed, health, attack based off of the invader type
+
 11-12-23
 --
 

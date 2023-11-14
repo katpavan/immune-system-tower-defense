@@ -6,7 +6,7 @@ public class InvaderSpawner : MonoBehaviour
 {
     public Invader invaderPrefab;
     public int spawnAmount = 2;
-    public float spawnRate = 5.0f;
+    public float spawnRate = 2.5f;
     
     //movement targets for invader
     private Transform targetOne;
@@ -66,7 +66,7 @@ public class InvaderSpawner : MonoBehaviour
         Invader invader = Instantiate(this.invaderPrefab, this.transform.position, Quaternion.identity);
         var t = createRandomTargets(); 
         invader.SendMessage("TheStart", t);    
-        
+
         // for (int i = 0; i < this.spawnAmount; i++)
         // {
         //     // Quaternion.identity means no rotation            

@@ -12,6 +12,8 @@ public class Invader : MonoBehaviour
     int NextPosIndex;
     Transform NextPos;
     public float speed = 1f;
+    public float health = 1f;
+    public float attack = 1f;
     public Sprite[] sprites;
     public string[] invaderTypes = new string[] {"virus", "bacteria", "fungi"};
     public string invaderType;
@@ -34,6 +36,20 @@ public class Invader : MonoBehaviour
 
         //randomize rotation
         this.transform.eulerAngles = new Vector3(0.0f, 0.0f, Random.value * 90.0f);
+
+        if (invaderindex == 0){ //virus [fast] [1 health] [2 attack]
+            speed = 0.5f;
+            health = 1f;
+            attack = 2f;
+        }else if (invaderindex == 1){ //bacteria [medium] [2 health] [attack 1]
+            speed = 0.25f;
+            health = 2f;
+            attack = 1f;
+        }else if (invaderindex == 2){ //fungi [slow] [3 health] [attack 1]
+            speed = 0.125f;
+            health = 3f;
+            attack = 1f;
+        }
 
         //let the FixedUpdate function run the MoveGameObject function
         this.invaderIsLoaded = true;
