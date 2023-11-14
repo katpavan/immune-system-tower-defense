@@ -7,23 +7,8 @@ using UnityEngine;
 public class Invader : MonoBehaviour
 {
     //movement targets for invader
-    private Transform targetOne;
-    public Transform[] targetOnes;
-    private Transform targetTwo;
-    public Transform[] targetTwos;
-    private Transform targetThree;
-    public Transform[] targetThrees;
-    private Transform targetFour;
-    public Transform[] targetFours;
-    private Transform targetFive;
-    public Transform[] targetFives;
-    private Transform targetSix;
-    public Transform[] targetSixes;
-    private Transform targetSeven;
-    public Transform[] targetSevens;
-    private Transform targetFinal;
-    public Transform[] targetFinals;
     public List<Transform> targets = new List<Transform>(); //use a list if you want to manipulate the inside
+    bool invaderIsLoaded;
     int NextPosIndex;
     Transform NextPos;
     public float speed = 1f;
@@ -33,36 +18,14 @@ public class Invader : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rigidbody;
 
-    void Awake()
-    {
+    // Start is called before the first frame update, but since this is a prefab, we don't have access to the scene.  
+    void TheStart (List<Transform> t) {   // you can't use start. But this is just as good.
+        this.targets = t;
+
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        NextPos = this.targets[0];
 
-        //randomize targets
-        targetOne = targetOnes[Random.Range(0, targetOnes.Length)];
-        targetTwo = targetTwos[Random.Range(0, targetTwos.Length)];
-        targetThree = targetThrees[Random.Range(0, targetThrees.Length)];
-        targetFour = targetFours[Random.Range(0, targetFours.Length)];
-        targetFive = targetFives[Random.Range(0, targetFives.Length)];
-        targetSix = targetSixes[Random.Range(0, targetSixes.Length)];
-        targetSeven = targetSevens[Random.Range(0, targetSevens.Length)];
-        targetFinal = targetFinals[Random.Range(0, targetFinals.Length)];
-
-        //add randomized targets to the targets list
-        targets.Add(targetOne);
-        targets.Add(targetTwo);
-        targets.Add(targetThree);
-        targets.Add(targetFour);
-        targets.Add(targetFive);
-        targets.Add(targetSix);
-        targets.Add(targetSeven);
-        targets.Add(targetFinal);
-
-        NextPos = targetOne;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
         //randomize invader
         //invaderTypes and sprites are in the same order
         int invaderindex = Random.Range(0, invaderTypes.Length);
@@ -70,7 +33,10 @@ public class Invader : MonoBehaviour
         _spriteRenderer.sprite = sprites[invaderindex];
 
         //randomize rotation
-        // this.transform.eulerAngles = new Vector3(0.0f, 0.0f, Random.value * 90.0f);
+        this.transform.eulerAngles = new Vector3(0.0f, 0.0f, Random.value * 90.0f);
+
+        //let the FixedUpdate function run the MoveGameObject function
+        this.invaderIsLoaded = true;
     }
 
     public void MoveGameObject()
@@ -98,7 +64,9 @@ public class Invader : MonoBehaviour
 
     public void FixedUpdate()
     {
-        MoveGameObject();
+        if (this.invaderIsLoaded){
+            MoveGameObject();
+        }
     }
 
     // private void OnCollisionEnter2D(Collision2D collision)

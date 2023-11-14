@@ -6,6 +6,7 @@ public class InvaderSpawner : MonoBehaviour
 {
     public Invader invaderPrefab;
     public int spawnAmount = 2;
+    public float spawnRate = 5.0f;
     
     //movement targets for invader
     private Transform targetOne;
@@ -24,21 +25,49 @@ public class InvaderSpawner : MonoBehaviour
     public Transform[] targetSevens;
     private Transform targetFinal;
     public Transform[] targetFinals;
-    public List<Transform> targets = new List<Transform>(); //use a list if you want to manipulate the inside
+
+    public List<Transform> createRandomTargets(){
+        var targets = new List<Transform>(); //use a list if you want to manipulate the inside
+
+        //randomize targets
+        targetOne = targetOnes[Random.Range(0, targetOnes.Length)];
+        targetTwo = targetTwos[Random.Range(0, targetTwos.Length)];
+        targetThree = targetThrees[Random.Range(0, targetThrees.Length)];
+        targetFour = targetFours[Random.Range(0, targetFours.Length)];
+        targetFive = targetFives[Random.Range(0, targetFives.Length)];
+        targetSix = targetSixes[Random.Range(0, targetSixes.Length)];
+        targetSeven = targetSevens[Random.Range(0, targetSevens.Length)];
+        targetFinal = targetFinals[Random.Range(0, targetFinals.Length)];
+
+        //add randomized targets to the targets list
+        targets.Add(targetOne);
+        targets.Add(targetTwo);
+        targets.Add(targetThree);
+        targets.Add(targetFour);
+        targets.Add(targetFive);
+        targets.Add(targetSix);
+        targets.Add(targetSeven);
+        targets.Add(targetFinal);
+
+        return targets;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        // Quaternion.identity means no rotation            
-        Invader invader = Instantiate(this.invaderPrefab, this.transform.position, Quaternion.identity); 
-        // InvokeRepeating(nameof(Spawn), this.spawnRate, this.spawnRate);
+        InvokeRepeating(nameof(Spawn), this.spawnRate, this.spawnRate);
     }
 
-    // private void Spawn()
-    // {
+    //it does spawn but it's slow!
+    private void Spawn()
+    {
+        Debug.Log("spawn");
         // for (int i = 0; i < this.spawnAmount; i++)
         // {
-            // Invader invader = Instantiate(this.invaderPrefab, this.transform.position, Quaternion.identity); //no rotation            
+        //     // Quaternion.identity means no rotation            
+        //     Invader invader = Instantiate(this.invaderPrefab, this.transform.position, Quaternion.identity);
+        //     var t = createRandomTargets(); 
+        //     invader.SendMessage("TheStart", t);           
         // }
-    // }
+    }
 }

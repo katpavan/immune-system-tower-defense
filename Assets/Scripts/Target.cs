@@ -7,7 +7,7 @@ public class Target : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("test");
+        // Debug.Log("test");
     }
 
     // Update is called once per frame
@@ -16,13 +16,13 @@ public class Target : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+    // private void OnCollisionEnter2D(Collision2D collision)
+    // {
 
-        if (collision.gameObject.CompareTag("invader"))
-        {
+        // if (collision.gameObject.CompareTag("invader"))
+        // {
             // Destroy(this.gameObject);
-            Debug.Log("test");
-        }
-    } 
+    //         Debug.Log("test");
+    //     }
+    // } 
 }
