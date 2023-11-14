@@ -32,6 +32,7 @@ public class Invader : MonoBehaviour
     public string invaderType;
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rigidbody;
+
     void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
