@@ -62,6 +62,11 @@ public class InvaderSpawner : MonoBehaviour
     private void Spawn()
     {
         Debug.Log("spawn");
+        // Quaternion.identity means no rotation            
+        Invader invader = Instantiate(this.invaderPrefab, this.transform.position, Quaternion.identity);
+        var t = createRandomTargets(); 
+        invader.SendMessage("TheStart", t);    
+        
         // for (int i = 0; i < this.spawnAmount; i++)
         // {
         //     // Quaternion.identity means no rotation            
