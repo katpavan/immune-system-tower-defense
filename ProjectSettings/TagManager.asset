@@ -7,6 +7,10 @@ TagManager:
   - mouth_area
   - invader
   - Target
+  - bcelltag
+  - macrophagetag
+  - helperttag
+  - neutrophiltag
   layers:
   - Default
   - TransparentFX

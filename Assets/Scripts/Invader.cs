@@ -38,15 +38,15 @@ public class Invader : MonoBehaviour
         this.transform.eulerAngles = new Vector3(0.0f, 0.0f, Random.value * 90.0f);
 
         if (invaderindex == 0){ //virus [fast] [1 health] [2 attack]
-            speed = 0.5f;
+            speed = 1.5f;
             health = 1f;
             attack = 2f;
         }else if (invaderindex == 1){ //bacteria [medium] [2 health] [attack 1]
-            speed = 0.25f;
+            speed = 1.25f;
             health = 2f;
             attack = 1f;
         }else if (invaderindex == 2){ //fungi [slow] [3 health] [attack 1]
-            speed = 0.125f;
+            speed = 1.125f;
             health = 3f;
             attack = 1f;
         }
