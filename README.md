@@ -1,3 +1,19 @@
+11-19-23
+--
+
+todo:
+* add specific data to each white blood cell
+* have the white blood cells interact with the invaders based on their traits
+* enable animations on white blood cells
+* fix the resolution issue on itch page
+* add in sounds and music
+* add in game over animation
+* add in intro animation
+
+done:
+* place the white blood cell where the mouse clicked
+* added the health to white blood cells. Since they all have a cooldown of 1 minute, I'm not going to customize more for the time being
+
 11-17-23
 --
 

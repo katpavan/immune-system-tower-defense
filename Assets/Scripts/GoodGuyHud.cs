@@ -38,7 +38,6 @@ public class GoodGuyHud : MonoBehaviour, IPointerClickHandler
             //spawnPos is the world position
             Vector3 spawnPos = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane + 1)); 
 
-            //something off is with spawnPos because when I use this.transform.position, it's fine 
             if (mouseState == "bcell"){
                 placeWhiteBloodCell(spawnPos, "bcell");
             } else if (mouseState == "macrophage"){
