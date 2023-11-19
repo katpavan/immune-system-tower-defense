@@ -11,6 +11,7 @@ TagManager:
   - macrophagetag
   - helperttag
   - neutrophiltag
+  - white_blood_cell_tag
   layers:
   - Default
   - TransparentFX

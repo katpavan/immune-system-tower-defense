@@ -6,40 +6,58 @@ using UnityEngine.UI;
 
 public class GoodGuyHud : MonoBehaviour, IPointerClickHandler
 {
+    private Camera cam; //need this to use ScreenToWorldPoint to spawn the white blood cells where the mouse gets clicked
+    public WhiteBloodCell white_blood_cell_prefab;
     private Image _image_component;
     private Sprite currentSprite;
     public Texture2D cursorArrowBCell;
     public Texture2D cursorArrowMacrophage;
     public Texture2D cursorArrowHelperT;
     public Texture2D cursorArrowNeutrophil;
+    public string mouseState; 
 
     public void Start()
     {
-        // newCursorArrowBCell = new Texture2D(cursorArrowBCell.width, cursorArrowBCell.height, TextureFormat.RGBA32, false);
-        // Color[] pixels = cursorArrowBCell.GetPixels(); //ArgumentException: Texture2D.GetPixels: texture data is either not readable, corrupted or does not exist. (Texture 'b cell')
-        // newCursorArrowBCell.SetPixels(pixels); 
-        // newCursorArrowBCell.Apply();
+        cam = Camera.main; //need this to use ScreenToWorldPoint to spawn the white blood cells where the mouse gets clicked
     }
 
-    // public void Awake()
-    // {
-    //     _image_component = GetComponent<Image>(); //this grabs the rigid body 2d component from the player game object
+    public void Update()
+    {
+        if (Input.GetMouseButtonDown(0)) // Check for left mouse click
+        {
+            //mousePos is the screen position
+            Vector3 mousePos = Input.mousePosition;
+            //spawnPos is the world position
+            Vector3 spawnPos = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane + 1)); 
 
-    //     currentSprite = _image_component.sprite;
-    //     cursorArrow = new Texture2D((int)currentSprite.rect.width, (int)currentSprite.rect.height);
-    // }
-
-    // public void Update()
-    // {
-    //     if (Input.GetMouseButtonDown(0)) // Check for left mouse click
-    //     {
-    //         Debug.Log("left mouse button clicked"); 
-    //         /*
-    //             1. spawn the good guy wherever was clicked
-    //             2. change the cursor to a hand cursor 
-    //         */
-    //     }
-    // }
+            //something off is with spawnPos because when I use this.transform.position, it's fine 
+            if (mouseState == "bcell"){
+                // Quaternion.identity means no rotation            
+                WhiteBloodCell wbc = Instantiate(this.white_blood_cell_prefab, spawnPos, Quaternion.identity);
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                wbc.SendMessage("TheStart", "bcell");
+                mouseState = null;
+            } else if (mouseState == "macrophage"){
+                // Quaternion.identity means no rotation            
+                WhiteBloodCell wbc = Instantiate(this.white_blood_cell_prefab, spawnPos, Quaternion.identity);
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                wbc.SendMessage("TheStart", "macrophage");
+                mouseState = null;
+            } else if (mouseState == "helperT"){
+                // Quaternion.identity means no rotation            
+                WhiteBloodCell wbc = Instantiate(this.white_blood_cell_prefab, spawnPos, Quaternion.identity);
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                wbc.SendMessage("TheStart", "helpert");
+                mouseState = null;
+            } else if (mouseState == "neutrophil"){
+                // Quaternion.identity means no rotation            
+                WhiteBloodCell wbc = Instantiate(this.white_blood_cell_prefab, spawnPos, Quaternion.identity);
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                wbc.SendMessage("TheStart", "neutrophil");
+                mouseState = null;
+            }
+        }
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -48,15 +66,16 @@ public class GoodGuyHud : MonoBehaviour, IPointerClickHandler
 
         if (go.tag == "bcelltag"){
             Cursor.SetCursor(cursorArrowBCell, Vector2.zero, CursorMode.Auto);
+            mouseState = "bcell";
         }else if (go.tag == "macrophagetag"){
             Cursor.SetCursor(cursorArrowMacrophage, Vector2.zero, CursorMode.Auto);
+            mouseState = "macrophage";
         }else if (go.tag == "helperttag"){
             Cursor.SetCursor(cursorArrowHelperT, Vector2.zero, CursorMode.Auto);
+            mouseState = "helperT";
         }else if (go.tag == "neutrophiltag"){
             Cursor.SetCursor(cursorArrowNeutrophil, Vector2.zero, CursorMode.Auto);
+            mouseState = "neutrophil";
         }
     }
-    
-    // Cursor.SetCursor(null, Vector2.zero, cursorMode);
-
 }
