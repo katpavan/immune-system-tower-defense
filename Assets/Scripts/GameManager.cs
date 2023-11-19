@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioManager am;
     public int score = 0;
     public int lives = 3;
 

@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using Random=UnityEngine.Random;
 
 public class InvaderSpawner : MonoBehaviour
-{
+{    
+    public AudioManager am;
     public Invader invaderPrefab;
     public int spawnAmount = 2;
     public float spawnRate = 2.5f;
@@ -56,6 +59,10 @@ public class InvaderSpawner : MonoBehaviour
     void Start()
     {
         InvokeRepeating(nameof(Spawn), this.spawnRate, this.spawnRate);
+        //play intro voice 
+        this.Invoke(() => am.PlayAudio(am.vo5, 1f), 7f);
+        //then play music
+        this.Invoke(() => am.PlayAudio(am.backgroundMusic, 1f), 20f);
     }
 
     //it does spawn but it's slow!
@@ -74,5 +81,19 @@ public class InvaderSpawner : MonoBehaviour
         //     var t = createRandomTargets(); 
         //     invader.SendMessage("TheStart", t);           
         // }
+    }
+}
+
+public static class Utility
+{
+    public static void Invoke(this MonoBehaviour mb, Action f, float delay)
+    {
+        mb.StartCoroutine(InvokeRoutine(f, delay));
+    }
+ 
+    private static IEnumerator InvokeRoutine(System.Action f, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        f();
     }
 }

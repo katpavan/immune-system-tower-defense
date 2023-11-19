@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WhiteBloodCell : MonoBehaviour
 {
+    public AudioManager am;
     public Sprite[] sprites;
     public string[] whiteBloodCellTypes = new string[] {"bcell", "macrophage", "helpert", "neutrophil"};
     private SpriteRenderer _spriteRenderer;

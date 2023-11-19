@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GoodGuyHud : MonoBehaviour, IPointerClickHandler
 {
+    public AudioManager am;
     private Camera cam; //need this to use ScreenToWorldPoint to spawn the white blood cells where the mouse gets clicked
     public WhiteBloodCell white_blood_cell_prefab;
     private Image _image_component;

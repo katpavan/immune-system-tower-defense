@@ -387,22 +387,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21439b22c84d814581eef937872301b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAudioSource: {fileID: 0}
+  playerAudioSource: {fileID: 519420033}
   backgroundMusic: {fileID: 8300000, guid: 0967ca758feb68a40979e062c3b56a82, type: 3}
   loseMusic: {fileID: 8300000, guid: e8008b02d44bb26489d8449316eeae38, type: 3}
   winMusic: {fileID: 8300000, guid: 500b042389552bb499f2267c74268f27, type: 3}
-  buttonClick: {fileID: 8300000, guid: 3265d90f6a2a24044b888a7728432ea3, type: 3}
-  enemySquishAlt: {fileID: 8300000, guid: 352005c01d05fa74281eb2eccd54edb2, type: 3}
-  enemySquish: {fileID: 8300000, guid: 1ef986b992f90a640a8c918ec4f8ca55, type: 3}
-  equipPowerUp: {fileID: 8300000, guid: 1b94fcf994d6841419c8039243a3d1fe, type: 3}
-  firingAlt: {fileID: 8300000, guid: 67d47d307b7063b4c886aa403161160c, type: 3}
-  firing: {fileID: 8300000, guid: c456ca2dec21d8448a32eb7eaa594bba, type: 3}
-  snapClick: {fileID: 8300000, guid: eee2079a57e78004c83cffa673821e41, type: 3}
-  popAltOne: {fileID: 8300000, guid: 6a4d4d41dd90e1a42aba73f3944c9780, type: 3}
-  popAltTwo: {fileID: 8300000, guid: f98f989913f02874d84aa2215ff48715, type: 3}
-  pop: {fileID: 8300000, guid: 0c459b8a8260a624b949a1d78fcd1dd1, type: 3}
-  sneezeAlt: {fileID: 8300000, guid: e22e26a285eb4514e814fb840f785431, type: 3}
-  sneeze: {fileID: 8300000, guid: 9ea6fad789e64224281c8605ece836bc, type: 3}
+  buttonClick: {fileID: 8300000, guid: 88e64d5b7f91ba64facd46c5264623fe, type: 3}
+  enemySquishAlt: {fileID: 8300000, guid: 95d7e652de51aba419f20f3bf067e130, type: 3}
+  enemySquish: {fileID: 8300000, guid: 2619e95725e023e4f93f40176466d402, type: 3}
+  equipPowerUp: {fileID: 8300000, guid: 24b05dbc4ae773043b5d6aa027f0797b, type: 3}
+  firingAlt: {fileID: 8300000, guid: 8dc2d6374b08f1c458ab03e49e80373e, type: 3}
+  firing: {fileID: 8300000, guid: ae9afcf72c5bcad4ebf68bd2e5656322, type: 3}
+  snapClick: {fileID: 8300000, guid: df4f42d35e0f6124ba99b034b970385a, type: 3}
+  popAltOne: {fileID: 8300000, guid: aff2be97c2bdd7440b05637e2a8bf771, type: 3}
+  popAltTwo: {fileID: 8300000, guid: 031ecc1a3e835284499522f3d8a12ed0, type: 3}
+  pop: {fileID: 8300000, guid: d9cd5eef59c983549b96ba312c1f8969, type: 3}
+  sneezeAlt: {fileID: 8300000, guid: cc01477f496497e48b9c1bd438b969a3, type: 3}
+  sneeze: {fileID: 8300000, guid: e93590926f3fceb4aac838ad726a13de, type: 3}
   vo1: {fileID: 8300000, guid: 5ab371bf8b21d3648bba538df9871303, type: 3}
   vo2: {fileID: 8300000, guid: d7d331dee949b904387d86562519449f, type: 3}
   vo3: {fileID: 8300000, guid: 568abb9cda78d0844b61721879d327ae, type: 3}
@@ -1173,6 +1173,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1246,6 +1247,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &519420033
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.507
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &608730950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2020,6 +2117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63aa0a1ed3d29694894e425af93c6a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  am: {fileID: 0}
   white_blood_cell_prefab: {fileID: 2666812088053907531, guid: ddd81f7b949bc194ab5d96458bafd293, type: 3}
   cursorArrowBCell: {fileID: 2800000, guid: 48df9169632e54b4ca05b1ac32415164, type: 3}
   cursorArrowMacrophage: {fileID: 2800000, guid: 5388bb1b76e520641975549c9997491b, type: 3}
@@ -2434,6 +2532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3da4ce112a43b49a88f73f46c2b4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  am: {fileID: 160574836}
   invaderPrefab: {fileID: 5209581205589254276, guid: 5c3312f62c3d89e49985a855985761a4, type: 3}
   spawnAmount: 2
   spawnRate: 5
@@ -2655,6 +2754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63aa0a1ed3d29694894e425af93c6a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  am: {fileID: 0}
   white_blood_cell_prefab: {fileID: 2666812088053907531, guid: ddd81f7b949bc194ab5d96458bafd293, type: 3}
   cursorArrowBCell: {fileID: 2800000, guid: 48df9169632e54b4ca05b1ac32415164, type: 3}
   cursorArrowMacrophage: {fileID: 2800000, guid: 5388bb1b76e520641975549c9997491b, type: 3}
@@ -3261,8 +3361,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: -0.58643436, y: 1.2048864, z: 0}
-    m_Extent: {x: 11.601086, y: 5.6515474, z: 0}
+    m_Center: {x: -0.5868759, y: 1.2412167, z: 0}
+    m_Extent: {x: 11.850639, y: 5.8646545, z: 0}
 --- !u!4 &1495636480
 Transform:
   m_ObjectHideFlags: 0
@@ -3476,6 +3576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eb91019f149824419e6eb8f9c152482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  am: {fileID: 0}
   score: 0
   lives: 3
 --- !u!4 &1917577995
@@ -3545,6 +3646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63aa0a1ed3d29694894e425af93c6a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  am: {fileID: 0}
   white_blood_cell_prefab: {fileID: 2666812088053907531, guid: ddd81f7b949bc194ab5d96458bafd293, type: 3}
   cursorArrowBCell: {fileID: 2800000, guid: 48df9169632e54b4ca05b1ac32415164, type: 3}
   cursorArrowMacrophage: {fileID: 2800000, guid: 5388bb1b76e520641975549c9997491b, type: 3}
@@ -3767,6 +3869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63aa0a1ed3d29694894e425af93c6a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  am: {fileID: 0}
   white_blood_cell_prefab: {fileID: 2666812088053907531, guid: ddd81f7b949bc194ab5d96458bafd293, type: 3}
   cursorArrowBCell: {fileID: 2800000, guid: 48df9169632e54b4ca05b1ac32415164, type: 3}
   cursorArrowMacrophage: {fileID: 2800000, guid: 5388bb1b76e520641975549c9997491b, type: 3}
