@@ -21,6 +21,14 @@ public class GoodGuyHud : MonoBehaviour, IPointerClickHandler
         cam = Camera.main; //need this to use ScreenToWorldPoint to spawn the white blood cells where the mouse gets clicked
     }
 
+    public void placeWhiteBloodCell(Vector3 spawn, string s){
+        // Quaternion.identity means no rotation            
+        WhiteBloodCell wbc = Instantiate(this.white_blood_cell_prefab, spawn, Quaternion.identity);
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        wbc.SendMessage("TheStart", s);
+        mouseState = null;
+    }
+
     public void Update()
     {
         if (Input.GetMouseButtonDown(0)) // Check for left mouse click
@@ -32,29 +40,13 @@ public class GoodGuyHud : MonoBehaviour, IPointerClickHandler
 
             //something off is with spawnPos because when I use this.transform.position, it's fine 
             if (mouseState == "bcell"){
-                // Quaternion.identity means no rotation            
-                WhiteBloodCell wbc = Instantiate(this.white_blood_cell_prefab, spawnPos, Quaternion.identity);
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                wbc.SendMessage("TheStart", "bcell");
-                mouseState = null;
+                placeWhiteBloodCell(spawnPos, "bcell");
             } else if (mouseState == "macrophage"){
-                // Quaternion.identity means no rotation            
-                WhiteBloodCell wbc = Instantiate(this.white_blood_cell_prefab, spawnPos, Quaternion.identity);
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                wbc.SendMessage("TheStart", "macrophage");
-                mouseState = null;
+                placeWhiteBloodCell(spawnPos, "macrophage");
             } else if (mouseState == "helperT"){
-                // Quaternion.identity means no rotation            
-                WhiteBloodCell wbc = Instantiate(this.white_blood_cell_prefab, spawnPos, Quaternion.identity);
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                wbc.SendMessage("TheStart", "helpert");
-                mouseState = null;
+                placeWhiteBloodCell(spawnPos, "helpert");
             } else if (mouseState == "neutrophil"){
-                // Quaternion.identity means no rotation            
-                WhiteBloodCell wbc = Instantiate(this.white_blood_cell_prefab, spawnPos, Quaternion.identity);
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                wbc.SendMessage("TheStart", "neutrophil");
-                mouseState = null;
+                placeWhiteBloodCell(spawnPos, "neutrophil");
             }
         }
     }
