@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Animations/Intro Animation/Intro Animation Scene 2/Scenes/introAnim2.unity
+    guid: b1abb935761b168449e8880591345089
+  - enabled: 1
+    path: Assets/Animations/Intro Animation/Intro Animation Scene 3/intro_animation_scene3/intro_animation_scene3.unity
+    guid: 74cea8507eca2448fb16c95cf660df53
+  - enabled: 1
+    path: Assets/Animations/Intro Animation/Intro Animation Scene 4/Intro_animation_scene4/intro_animation_scene4.unity
+    guid: cf3742fa8d3b74773b2fd501578c827e
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
